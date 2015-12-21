@@ -1,4 +1,4 @@
 Console settings should be in 
 
-C:\Users\rkumar\AppData\Roaming
+C:\Users\rkumar\AppData\Roaming\Console
 
