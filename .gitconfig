@@ -1,0 +1,80 @@
+[user]
+	email = rajkum@thoughtworks.com
+	name = Raj
+[core]
+pager = less -F
+	autocrlf = true
+editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	excludesfile = \\\\Mac\\Home\\Documents\\gitignore_global.txt
+[color]
+ui = auto
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+[alias]
+   f = "!git ls-files | grep -i"
+   latest = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+   what = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+   who = shortlog -s --
+   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+   standup = "log --since yesterday --author 'Christian Trabold'"
+   l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+mn = merge --no-commit
+cn = cherry-pick --no-commit
+cr = cherry-pick
+ci = commit
+co = checkout
+   cl = clone
+   st = status
+   sts = status --short
+   b = branch
+   d = diff
+   dc = diff --cached
+   unstage = reset HEAD --
+   diff = diff --word-diff
+   grep = grep -Ii
+   pend = !sh -c 'git log origin/"$1".."$1"' -
+   fo = fetch origin
+   rpo = remote prune origin
+   in = log ..@{u}
+   inp = log -p ..@{u}
+   out = log @{u}..
+   outp = log -p @{u}..
+   g = grep --break --heading --line-number
+   sf = submodule foreach
+   cc = "!du -sh .git; git gc --aggressive --prune=now; du -sh .git;"
+
+   # [siu = submodule init update] Runs submodule-initialisation and update after a fresh checkout RECURSIVE!
+   siu = "!git submodule update --init; git sf \"git siu\""
+
+   # Push all submodules
+   pushsub = sf "git push"
+
+   # Pull all submodules
+   pullsub = sf "git pull"
+	br = branch
+[status]
+   showUntrackedFiles = all
+   submodulesummary = true
+[push]
+default = tracking
+[pull]
+   rebase = true
+[branch]
+autosetupmerge = true
+autosetuprebase = always
+[merge]
+defaultToUpstream = true
+tool = BeyondCompare3
+[help]
+autocorrect = 1
+[branch "master"]
+rebase = true
+[diff]
+guitool = beyondcompare3
+[credential]
+[difftool "BeyondCompare3"]
+path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+[difftool "beyondcompare3"]
